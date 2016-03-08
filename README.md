@@ -1,11 +1,11 @@
 # styleguides
 
-Wealthsimple's styleguides for the following languages & frameworks:
+Wealthsimple's language and framework-specifc coding styleguides are available in separate files below:
 
 - [Ruby, Rails](https://github.com/wealthsimple/styleguides/blob/master/Ruby.md)
 - [CSS, SCSS](https://github.com/wealthsimple/styleguides/blob/master/CSS.md)
 
-# General-purpose guidelines
+# Core principles
 
 Below are some language-independent guidelines.
 
