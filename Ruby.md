@@ -14,8 +14,6 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
     1. [File/class-level comments](#fileclass-level-comments)
     1. [Function comments](#function-comments)
     1. [Block and inline comments](#block-and-inline-comments)
-    1. [Punctuation, spelling, and grammar](#punctuation-spelling-and-grammar)
-    1. [TODO comments](#todo-comments)
     1. [Commented-out code](#commented-out-code)
   1. [Methods](#methods)
     1. [Method definitions](#method-definitions)
@@ -315,46 +313,6 @@ end
 
 On the other hand, never describe the code. Assume the person reading the code
 knows the language (though not what you're trying to do) better than you do.
-
-### Punctuation, spelling and grammar
-
-Pay attention to punctuation, spelling, and grammar; it is easier to read
-well-written comments than badly written ones.
-
-Comments should be as readable as narrative text, with proper capitalization
-and punctuation. In many cases, complete sentences are more readable than
-sentence fragments. Shorter comments, such as comments at the end of a line of
-code, can sometimes be less formal, but you should be consistent with your
-style.
-
-Although it can be frustrating to have a code reviewer point out that you are
-using a comma when you should be using a semicolon, it is very important that
-source code maintain a high level of clarity and readability. Proper
-punctuation, spelling, and grammar help with that goal.
-
-### TODO comments
-
-Use TODO comments for code that is temporary, a short-term solution, or
-good-enough but not perfect.
-
-TODOs should include the string TODO in all caps, followed by the full name
-of the person who can best provide context about the problem referenced by the
-TODO, in parentheses. A colon is optional. A comment explaining what there is
-to do is required. The main purpose is to have a consistent TODO format that
-can be searched to find the person who can provide more details upon request.
-A TODO is not a commitment that the person referenced will fix the problem.
-Thus when you create a TODO, it is almost always your name that is given.
-
-```ruby
-  # bad
-  # TODO(RS): Use proper namespacing for this constant.
-
-  # bad
-  # TODO(drumm3rz4lyfe): Use proper namespacing for this constant.
-
-  # good
-  # TODO(Ringo Starr): Use proper namespacing for this constant.
-```
 
 ### Commented-out code
 
