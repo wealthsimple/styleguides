@@ -5,7 +5,7 @@ Wealthsimple's language and framework-specifc coding styleguides are available i
 - [Ruby, Rails](https://github.com/wealthsimple/styleguides/blob/master/Ruby.md)
 - [CSS, SCSS](https://github.com/wealthsimple/styleguides/blob/master/CSS.md)
 - [JavaScript, Angular](https://github.com/wealthsimple/styleguides/blob/master/JavaScript.md) - in progress
-- [Java, Android, Play Framework)](https://github.com/wealthsimple/styleguides/blob/master/Java.md - in progress
+- [Java, Android, Play Framework](https://github.com/wealthsimple/styleguides/blob/master/Java.md) - in progress
 - [Objective-C, iOS](https://github.com/wealthsimple/styleguides/blob/master/Objective-C.md) - in progress
 
 # Core principles
