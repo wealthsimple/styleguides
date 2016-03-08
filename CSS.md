@@ -69,6 +69,7 @@ Finally, properties are what give the selected elements of a rule declaration th
 * Use soft tabs (2 spaces) for indentation
 * Prefer dashes over camelCasing in class names. Underscores are OK if you're using BEM (see [OOCSS and BEM](#oocss-and-bem) below).
 * Do not use ID selectors
+* Do not use `!important`
 * When using multiple selectors in a rule declaration, give each selector its own line.
 * Put a space before the opening brace `{` in rule declarations
 * In properties, put a space after, but not before, the `:` character.
