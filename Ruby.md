@@ -2,7 +2,7 @@
 
 This is Wealthsimple's Ruby Style Guide.
 
-It was inspired by [Airbnb's guide][airbnb-ruby], [Github's guide][github-ruby] and [Bozhidar Batsov's guide][bbatsov-ruby].
+It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's guide][github-ruby] and [Bozhidar Batsov's guide][bbatsov-ruby].
 
 ## Table of Contents
   1. [Whitespace](#whitespace)
