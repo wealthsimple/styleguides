@@ -186,3 +186,5 @@ knows the language (though not what you're trying to do) better than you do.
 &mdash;[Google C++ Style Guide][google-c++]
 
 [google-c++]: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
+[google-c++-comments]: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Comments
+[google-python-comments]: http://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Comments
