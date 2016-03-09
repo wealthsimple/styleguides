@@ -1,5 +1,3 @@
-Source: https://wealthsimple.quip.com/VCBBAVBGzrSz
-
 Front End Guidelines
 ====================
 
@@ -45,15 +43,20 @@ my-folder/my-file.css
 **1.3 Namespace the components**
 
 **FileSystem:**
-src/js/core/main.controller.js
-**
-Angular: **
-angular.module(“terminal”)
+
+    src/js/core/main.controller.js
+
+
+**Angular:**
+
+```js
+angular.module("terminal")
  .controller
-  (“terminal.core.mainCtrl”,
-   [“$scope”, function($scope){
+  ("terminal.core.mainCtrl",
+   ["$scope", function($scope){
 
 }]);
+```
 
 2.0 Organization
 ----------------
@@ -70,6 +73,7 @@ angular.module(“terminal”)
 * Common → Repeated through core
 * Nested States = Nested Folders
 
+```
 scripts/ 
     common/ 
         services/ 
@@ -79,12 +83,14 @@ scripts/
         products/
             products.contoller.js
             product-details/
+```
 
 **2.3 Keep everything together**
 
 * Easy to find related files
 * Prevents folder structure duplication
 
+```
 users-list/
     users-list.controller.js
     users-list.controller.test.js
@@ -95,26 +101,37 @@ smart-tree/
     smart-tree.directive.test.js
     smart-tree.html
     smart-tree.css
+```
 
 **2.4 Separate module for each component**
 
 **src/js/terminal/user/user.module.js**
-.module(“terminal.user”, [])
+
+```js
+.module("terminal.user", [])
+```
 
 **src/js/terminal/user/user.controller.js**
+
+```js
 .controller(
- “myApp.core.user.userCtrl”, ...)
+ "myApp.core.user.userCtrl", ...)
+ ```
 
 
 **src/js/common/services/product.service.js**
+
+```js
 angular
-.module(“ws.common.services”)
+.module("ws.common.services")
  .service(
-  “ws.common.services.product”
+  "ws.common.services.product"
+```
 
 
 **2.5 Wrap angular components in IIFE**
 
+```js
 /**
 * recommended
 *
@@ -131,9 +148,11 @@ angular
 
   function logger() { }
 })();
+```
 
 **2.6 Avoid declaring modules with variable names**
 
+```js
 /* avoid */
 var app = angular.module('app', [
   'ngAnimate',
@@ -150,9 +169,11 @@ angular
     'app.shared',
     'app.dashboard'
   ]);
+```
 
 **2.7 Use Named functions**
 
+```js
 /* recommended */
 
 // dashboard.js
@@ -161,9 +182,11 @@ angular
   .controller('DashboardController', DashboardController);
 
 function DashboardController() { }
+```
 
 **2.8 Bindable methods up top**
 
+```js
 /* recommended */
 function SessionsController($scope) {
 
@@ -202,7 +225,7 @@ function activate() {
     logger.info('Activated Avengers View');
   });
 }
-
+```
 
 **Defer Controller Logic to Services**
 
@@ -219,6 +242,7 @@ function activate() {
 * Singletons: return an object that contains members of its service.
 * Keep exposed members at the top:
 
+```js
 /* recommended */
 function dataServiceFactory() {
   var someValue = '';
@@ -239,6 +263,7 @@ function dataServiceFactory() {
     /* */
   }
 }
+```
 
 **Data Services**
 
@@ -255,6 +280,7 @@ function dataServiceFactory() {
 
 * Use $inject to manually identify your dependencies for Angular components.
 
+```js
 /* recommended */
 angular
   .module('app')
@@ -264,11 +290,13 @@ DashboardController.$inject = ['$location', '$routeParams', 'common', 'dataservi
 
 function DashboardController($location, $routeParams, common, dataservice) {
 }
+```
 
 **Exception Handling**
 
 * Use decorators
 
+```js
 /* recommended */
 angular
   .module('blocks.exception')
@@ -298,11 +326,13 @@ function extendExceptionHandler($delegate, toastr) {
     toastr.error(exception.msg, errorData);
   };
 }
+```
 
 **Route Errors**
 
 * Handle and log all routing errors using $routeChangeError (https://docs.angularjs.org/api/ngRoute/service/$route#$routeChangeError).
 
+```js
 /* recommended */
 var handlingRouteChangeError = false;
 
@@ -335,6 +365,7 @@ function handleRoutingErrors() {
     }
   );
 }
+```
 
 4.0 Misc
 --------
@@ -343,9 +374,10 @@ function handleRoutingErrors() {
 
 **4.2 Prefer promises over callbacks**
 
-* Follow “ing” convention
-    * function that have an “ing” verb return promises
+* Follow "ing" convention
+    * function that have an "ing" verb return promises
 
+```js
 function reading(){
   var deferred = $q.defer();
   oldSchool.read(function(a){
@@ -353,6 +385,7 @@ function reading(){
   });
   return deferred.promise
 }
+```
 
 **4.3 Single Responsibility Principle**
 
@@ -361,6 +394,7 @@ function reading(){
 
 **4.4 Name modules and components with namespaces to avoid colision**
 
+```js
 (function() {
   'use strict';
 
@@ -372,5 +406,4 @@ function reading(){
   ConstantsService.$inject = ['$resource'];
   function ConstantsService($resource) { }
 })();
-
-[See here for a potential starting point](https://github.com/airbnb/javascript)
+```
