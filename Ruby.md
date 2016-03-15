@@ -179,8 +179,7 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
      end
      ```
 
-* <a name="no-default-args"></a>Do not use default arguments. Use an options
-    hash instead.<sup>[[link](#no-default-args)]</sup>
+* <a name="no-default-args"></a>Do not use default arguments. Use keyword arguments instead.<sup>[[link](#no-default-args)]</sup>
 
     ```ruby
     # bad
@@ -189,14 +188,7 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
     end
 
     # good
-    def obliterate(things, options = {})
-      default_options = {
-        gently: true, # obliterate with soft-delete
-        except: [], # skip obliterating these things
-        at: Time.now, # don't obliterate them until later
-      }
-      options.reverse_merge!(default_options)
-
+    def obliterate(things, gently: true, except: [], at: Time.now)
       ...
     end
     ```
@@ -749,7 +741,7 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
 * <a name="size-over-count"></a>Prefer `size` over either `length` or `count`
     for performance reasons.<sup>[[link](#size-over-count)]</sup>
 
-* Use symbols instead of strings as hash keys. Prefer new symbol hash syntax over old hashrocket syntax.
+* Use symbols instead of strings as hash keys. Prefer new symbol hash syntax over old hashrocket syntax. .<sup>[[link](#new-hash-syntax)]</sup>
 
     ```ruby
     # bad
