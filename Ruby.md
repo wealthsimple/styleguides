@@ -191,9 +191,9 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
     # good
     def obliterate(things, options = {})
       default_options = {
-        :gently => true, # obliterate with soft-delete
-        :except => [], # skip obliterating these things
-        :at => Time.now, # don't obliterate them until later
+        gently: true, # obliterate with soft-delete
+        except: [], # skip obliterating these things
+        at: Time.now, # don't obliterate them until later
       }
       options.reverse_merge!(default_options)
 
@@ -247,33 +247,6 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
 
     # good
     nil?
-    ```
-
-* <a name="no-return-parens"></a>If the method doesn't return a value (or we
-    don't care about the return), parentheses are optional. (Especially if the
-    arguments overflow to multiple lines, parentheses may add readability.)
-    <sup>[[link](#no-return-parens)]</sup>
-
-    ```ruby
-    # okay
-    render(:partial => 'foo')
-
-    # okay
-    render :partial => 'foo'
-    ```
-
-In either case:
-
-* <a name="options-no-braces"></a>If a method accepts an options hash as the
-    last argument, do not use `{` `}` during invocation.
-    <sup>[[link](#options-no-braces)]</sup>
-
-    ```ruby
-    # bad
-    get '/v1/reservations', { :id => 54875 }
-
-    # good
-    get '/v1/reservations', :id => 54875
     ```
 
 ## Conditional Expressions
@@ -776,14 +749,17 @@ In either case:
 * <a name="size-over-count"></a>Prefer `size` over either `length` or `count`
     for performance reasons.<sup>[[link](#size-over-count)]</sup>
 
-* Use symbols instead of strings as hash keys.
+* Use symbols instead of strings as hash keys. Prefer new symbol hash syntax over old hashrocket syntax.
 
     ```ruby
     # bad
-    hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
+    hash = {'one' => 1, 'two' => 2, 'three' => 3}
 
+    # bad
+    hash = {:one => 1, :two => 2, :three => 3}
+    
     # good
-    hash = { :one => 1, :two => 2, :three => 3 }
+    hash = {one: 1, two: 2, three: 3}
     ```
 
 * <a name="multiline-hashes"></a>Use multi-line hashes when it makes the code
@@ -793,12 +769,12 @@ In either case:
 
     ```ruby
     hash = {
-      :protocol => 'https',
-      :only_path => false,
-      :controller => :users,
-      :action => :set_password,
-      :redirect => @redirect_url,
-      :secret => @secret,
+      protocol: 'https',
+      only_path: false,
+      controller: :users,
+      action: :set_password,
+      redirect: @redirect_url,
+      secret: @secret,
     }
     ```
 
@@ -957,18 +933,18 @@ In either case:
 
     ```ruby
     # bad
-    render :text => 'Howdy' and return
+    render text: 'Howdy' and return
 
     # good
-    render :text => 'Howdy'
+    render text: 'Howdy'
     return
 
     # still bad
-    render :text => 'Howdy' and return if foo.present?
+    render text: 'Howdy' and return if foo.present?
 
     # good
     if foo.present?
-      render :text => 'Howdy'
+      render text: 'Howdy'
       return
     end
     ```
@@ -981,10 +957,10 @@ In either case:
 
     ```ruby
     # bad
-    scope :foo, where(:bar => 1)
+    scope :foo, where(bar: 1)
 
     # good
-    scope :foo, -> { where(:bar => 1) }
+    scope :foo, -> { where(bar: 1) }
     ```
     
 [ruby-naming-bang]: http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist
