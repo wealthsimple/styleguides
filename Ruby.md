@@ -741,7 +741,7 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
 * <a name="size-over-count"></a>Prefer `size` over either `length` or `count`
     for performance reasons.<sup>[[link](#size-over-count)]</sup>
 
-* Use symbols instead of strings as hash keys. Prefer new symbol hash syntax over old hashrocket syntax. .<sup>[[link](#new-hash-syntax)]</sup>
+* <a name="new-hash-syntax"></a>Use symbols instead of strings as hash keys. Prefer new symbol hash syntax over old hashrocket syntax. .<sup>[[link](#new-hash-syntax)]</sup>
 
     ```ruby
     # bad
