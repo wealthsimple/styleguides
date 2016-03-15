@@ -25,6 +25,7 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
   1. [Percent Literals](#percent-literals)
   1. [Rails](#rails)
     1. [Scopes](#scopes)
+    2. [Ordering](#ordering)
 
 ## Whitespace
 
@@ -954,5 +955,18 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
     # good
     scope :foo, -> { where(bar: 1) }
     ```
+    
+### Ordering
+* <a name="default-ordering"></a> If you need your results to be ordered in a specific direction, or you're using `#first` or `#last` on a collection, always specify explicit ordering.<sup>[[link](#default-ordering)]</sup>
+    
+  ```ruby
+  # bad
+  User.first
+  User.order(:email_confirmed_at)
+  
+  # good
+  User.order(created_at: :desc).first
+  User.order(email_confirmed_at: :asc)
+  ```
     
 [ruby-naming-bang]: http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist
