@@ -412,7 +412,7 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
     ```
 
 * <a name="single-line-blocks"></a>Prefer `{...}` over `do...end` for
-    single-line blocks.  Avoid using `{...}` for multi-line blocks (multiline
+    single-line blocks.  Avoid using `{...}` for multi-line blocks (multi-line
     chaining is always ugly). Always use `do...end` for "control flow" and
     "method definitions" (e.g. in Rakefiles and certain DSLs).  Avoid `do...end`
     when chaining.<sup>[[link](#single-line-blocks)]</sup>
@@ -435,7 +435,7 @@ It was inspired by [Airbnb's guide](https://github.com/airbnb/ruby), [Github's g
     end.map { |name| name.upcase }
     ```
 
-    Some will argue that multiline chaining would look okay with the use of
+    Some will argue that multi-line chaining would look okay with the use of
     `{...}`, but they should ask themselves if this code is really readable and
     whether the block's content can be extracted into nifty methods.
 
