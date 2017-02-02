@@ -13,7 +13,3 @@ Install [intellij-java-google-style.xml](java/intellij-java-google-style.xml) on
 ## Android
 
 Section covering Android-specific Java conventions.
-
-## Play Framework
-
-Section covering Play Framework-specific Java conventions.
